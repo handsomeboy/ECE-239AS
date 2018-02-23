@@ -278,11 +278,11 @@ class Solver(object):
             if epoch_end:
                 # check if the validation accuracy is bad, and then terminate early.
                 self.epoch += 1
-                if self.epoch >= 5 and self.val_acc_history[-1] < 0.49:
-                    print('sorry, this network is probably bad, at epoch 5 only got an accuracy of {}'.format(self.val_acc_history[-1]))
-                    break
-                elif self.val_acc_history[-1] > 0.6:
-                    print('NOTE, we got to 0.6')
+                # if self.epoch >= 5 and self.val_acc_history[-1] < 0.49:
+                #     print('sorry, this network is probably bad, at epoch 5 only got an accuracy of {}'.format(self.val_acc_history[-1]))
+                #     break
+                # elif self.val_acc_history[-1] > 0.6:
+                #     print('NOTE, we got to 0.6')
                 for k in self.optim_configs:
                     self.optim_configs[k]['learning_rate'] *= self.lr_decay
 
